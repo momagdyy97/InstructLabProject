@@ -1,5 +1,5 @@
 
-🚀 SQLCoder API - CUDA-Optimized Deployment
+SQLCoder API - CUDA-Optimized Deployment
 This repository provides a FastAPI-based SQLCoder API optimized for CUDA acceleration with NVIDIA GPUs. It supports SQL-based NLP tasks using the ollama and vllm frameworks, backed by torch and transformers.
 
 🔧 Setup Instructions
@@ -54,7 +54,7 @@ wget -O /root/.local/share/instructlab/checkpoints/sqlcoder-trained-Q4_K_M.gguf 
 https://example.com/path-to-your-model/sqlcoder-trained-Q4_K_M.gguf
 This ensures the model is downloaded properly without causing build-time failures.
 
-🚀 Using SQLCoder Inside the Container
+Using SQLCoder Inside the Container
 
 1️⃣ Test the Model in a Chat Session
 
@@ -91,9 +91,9 @@ docker-compose build --no-cache
 
 docker-compose up -d
 
-🚀 Your build should be MUCH faster now!
+Your build should be MUCH faster now!
 
-📌 Optional: Training SQLCoder on Custom Data
+Optional: Training SQLCoder on Custom Data
 To train SQLCoder on your own dataset, follow these steps:
 
 1️⃣ Clone the InstructLab Taxonomy Repository
@@ -113,18 +113,18 @@ source /opt/venv/bin/activate
 
 # Train the model
 ilab model train --pipeline accelerated --device cuda --data-path ~/.local/share/instructlab/datasets/
-🔥 This will fine-tune SQLCoder on your dataset using GPU acceleration.
+This will fine-tune SQLCoder on your dataset using GPU acceleration.
 
-💾 Saving Changes to a New Docker Image
+Saving Changes to a New Docker Image
 If you want to save all installed dependencies & models inside the container:
 
 docker commit sqlcoder my-sqlcoder-image
 docker tag my-sqlcoder-image my-repo/sqlcoder:latest
-🚀 Now, you won't need to re-download models every time.
+Now, you won't need to re-download models every time.
 
 🔗 Useful Resources
 🔹 SQLCoder Repository: [GitHub](https://github.com/defog-ai/sqlcoder)
 🔹 FastAPI Documentation: [FastAPI Docs](https://fastapi.tiangolo.com/)
 🔹 NVIDIA Container Toolkit: Setup Guide https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html
 
-🚀 This setup is fully optimized, GPU-accelerated, and production-ready! 🔥
+
