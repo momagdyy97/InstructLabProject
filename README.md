@@ -3,6 +3,7 @@
 This repository provides a FastAPI-based SQLCoder API optimized for CUDA acceleration with NVIDIA GPUs. It supports SQL-based NLP tasks using the ollama and vllm frameworks, backed by torch and transformers.
 
 🔧 Setup Instructions
+
 1️⃣ Install Required Dependencies
 Ensure you have the following installed:
 
@@ -24,9 +25,11 @@ docker-compose build --no-cache
 Start the Container
 
 docker-compose up -d
+
 3️⃣ Verify the Model & API
 Test the FastAPI Server
-Once the container is running, check the API Swagger UI: 📌 Swagger UI Docs: http://127.0.0.1:8000/docs
+Once the container is running, check the API Swagger UI: 
+📌 Swagger UI Docs: http://127.0.0.1:8000/docs
 📌 Alternative OpenAPI JSON: http://127.0.0.1:8000/openapi.json
 
 Check if CUDA is Enabled
@@ -43,6 +46,7 @@ Since downloading and training models can be time-consuming, it's best to instal
 1️⃣ Access the Running Container
 
 docker exec -it sqlcoder /bin/bash
+
 2️⃣ Manually Download SQLCoder-7B Model
 
 mkdir -p /root/.local/share/instructlab/checkpoints
@@ -56,12 +60,15 @@ This ensures the model is downloaded properly without causing build-time failure
 
 docker exec -it sqlcoder ilab model chat \
     -m /root/.local/share/instructlab/checkpoints/sqlcoder-trained-Q4_K_M.gguf
+    
 2️⃣ Evaluate Model Performance
 
 docker exec -it sqlcoder ilab model evaluate --benchmark mmlu_branch \
     --model /root/.local/share/instructlab/checkpoints/sqlcoder-trained-Q4_K_M.gguf \
     --base-model ~/.cache/instructlab/models/sqlcoder-7b.gguf
+    
 🛠 Persistent Model Storage
+
 If you want to persist the SQLCoder models across runs, ensure the /models volume is mounted properly in docker-compose.yml:
 
 volumes:
@@ -71,15 +78,19 @@ This way, models won't get deleted when the container stops.
 📜 # Final Cleanup & Optimizations
 
 1️⃣ Delete All Docker Data (Optional)
+
 If you want a fresh build:
 
 docker system prune -a --volumes
+
 2️⃣ Rebuild the Docker Image
 
 docker-compose build --no-cache
+
 3️⃣ Restart the Container
 
 docker-compose up -d
+
 🚀 Your build should be MUCH faster now!
 
 📌 Optional: Training SQLCoder on Custom Data
