@@ -51,6 +51,7 @@ https://example.com/path-to-your-model/sqlcoder-trained-Q4_K_M.gguf
 This ensures the model is downloaded properly without causing build-time failures.
 
 🚀 Using SQLCoder Inside the Container
+
 1️⃣ Test the Model in a Chat Session
 
 docker exec -it sqlcoder ilab model chat \
@@ -67,7 +68,8 @@ volumes:
   - ./models:/root/.local/share/instructlab/checkpoints:rw
 This way, models won't get deleted when the container stops.
 
-📜 Final Cleanup & Optimizations
+📜 # Final Cleanup & Optimizations
+
 1️⃣ Delete All Docker Data (Optional)
 If you want a fresh build:
 
