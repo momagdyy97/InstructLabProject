@@ -1,0 +1,44 @@
+# Ignore Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore virtual environments
+.venv/
+venv/
+
+# Ignore development tools and IDE configs
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Ignore Git-related files
+# (Remove `.git/` if this is the root of your repository)
+.git/
+
+# Ignore logs and models
+logs/
+models/
+
+# Ignore temporary files
+*.swp
+*.tmp
+*.bak
+
+# Ignore build directories
+build/
+dist/
+*.egg-info/
+
+# Ignore OS-specific files
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Ignore Docker-specific files
+.env
+docker-compose.override.yml

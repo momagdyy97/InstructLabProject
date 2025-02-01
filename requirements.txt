@@ -1,0 +1,17 @@
+torch
+transformers
+fastapi
+uvicorn
+gunicorn 
+ollama
+vllm
+numpy
+pydantic
+jinja2
+requests
+filelock
+tqdm
+regex
+safetensors
+pip
+setuptools
