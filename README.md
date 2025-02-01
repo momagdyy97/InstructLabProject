@@ -92,6 +92,7 @@ cd taxonomy
 mkdir -p knowledge/computer_science/databases/sql/qna
 echo -e "question: 'What is an index in a database?'\nanswer: 'An index improves query performance by allowing faster lookups.'" \
 > knowledge/computer_science/databases/sql/qna.yaml
+
 3️⃣ Train SQLCoder with Custom Data
 
 # Activate virtual environment
@@ -109,8 +110,8 @@ docker tag my-sqlcoder-image my-repo/sqlcoder:latest
 🚀 Now, you won't need to re-download models every time.
 
 🔗 Useful Resources
-🔹 SQLCoder Repository: GitHub
-🔹 FastAPI Documentation: FastAPI Docs
-🔹 NVIDIA Container Toolkit: Setup Guide
+🔹 SQLCoder Repository: [GitHub](https://github.com/defog-ai/sqlcoder)
+🔹 FastAPI Documentation: [FastAPI Docs](https://fastapi.tiangolo.com/)
+🔹 NVIDIA Container Toolkit: Setup Guide https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html
 
 🚀 This setup is fully optimized, GPU-accelerated, and production-ready! 🔥
