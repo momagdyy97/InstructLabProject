@@ -68,11 +68,6 @@ COPY --from=build-env /opt/venv /opt/venv
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
-# Create non-root user for security
-RUN useradd -m appuser
-USER appuser
-WORKDIR /workspace
-
 # Expose port and set entrypoint
 EXPOSE 8000
 ENTRYPOINT ["/entrypoint.sh"]
