@@ -29,12 +29,8 @@ ENV PATH="${VENV_PATH}/bin:$PATH"
 # Set working directory
 WORKDIR /workspace
 
-# Copy requirements file and install dependencies
+# Copy requirements file
 COPY requirements.txt .
-RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt && \
-    pip install --no-cache-dir ollama vllm 
-
 # Copy application code
 COPY ./app /workspace/app
 
@@ -67,11 +63,6 @@ COPY --from=build-env /opt/venv /opt/venv
 # Copy entrypoint script
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
-
-# Create non-root user for security
-RUN useradd -m appuser
-USER appuser
-WORKDIR /workspace
 
 # Expose port and set entrypoint
 EXPOSE 8000
