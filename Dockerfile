@@ -57,8 +57,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends wget && \
 
 # Copy application and dependencies from build stage
 WORKDIR /workspace
-COPY --from=build-env /workspace /workspace
 COPY --from=build-env /opt/venv /opt/venv
+COPY --from=build-env /workspace /workspace
 
 # Copy entrypoint script
 COPY entrypoint.sh /entrypoint.sh
